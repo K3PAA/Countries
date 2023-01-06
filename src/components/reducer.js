@@ -18,6 +18,9 @@ const reducer = (state, action) => {
     return { ...state, sort: action.payload }
   }
 
+  if (action.type === 'HANDLE_TEXT') {
+    return { ...state, text: action.payload }
+  }
   return state
 }
 

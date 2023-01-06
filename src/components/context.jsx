@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from 'react'
+import React, { useContext, useReducer, useEffect } from 'react'
 import reducer from './reducer.js'
 
 const AppContext = React.createContext()
@@ -16,14 +16,18 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'HANDLE_SORTING', payload: value })
   }
 
-  useState(() => {
+  const handleText = (value) => {
+    dispatch({ type: 'HANDLE_TEXT', payload: value })
+  }
+
+  useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
       .then((data) => data.json())
       .then((data) => dispatch({ type: 'GET_COUNTRIES', payload: data }))
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, handleSort }}>
+    <AppContext.Provider value={{ ...state, handleSort, handleText }}>
       {children}
     </AppContext.Provider>
   )

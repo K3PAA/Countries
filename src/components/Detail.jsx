@@ -14,7 +14,7 @@ function Detail() {
       .catch((err) => console.log(err))
   }, [])
 
-  console.log(country && country.currencies)
+  console.log(country)
 
   return country ? (
     <div>
