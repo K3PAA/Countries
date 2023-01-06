@@ -6,7 +6,6 @@ const AppContext = React.createContext()
 let initialValues = {
   text: '',
   sort: 'ByRegion',
-  CC: {},
   countries: [],
 }
 
@@ -17,10 +16,6 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'HANDLE_SORTING', payload: value })
   }
 
-  const getSingleCountry = (data) => {
-    dispatch({ type: 'SINGLE_COUNTRY', payload: data })
-  }
-
   useState(() => {
     fetch('https://restcountries.com/v3.1/all')
       .then((data) => data.json())
@@ -28,7 +23,7 @@ const AppProvider = ({ children }) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, handleSort, getSingleCountry }}>
+    <AppContext.Provider value={{ ...state, handleSort }}>
       {children}
     </AppContext.Provider>
   )
