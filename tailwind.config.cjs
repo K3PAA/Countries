@@ -5,6 +5,8 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      animation: {},
+
       colors: {
         primaryD: 'hsl(209, 23%, 22%)',
         secondaryD: 'hsl(207, 26%, 17%)',

@@ -5,7 +5,7 @@ import styles from '../style'
 
 function SingleCard({ name, capital, region, flag, population, id }) {
   return (
-    <div className='w-[320px] flex-col bg-lightest shadow-[3px_3px_10px_-2px_rgba(0,0,0,0.3)]'>
+    <div className='w-[320px] flex-col bg-lightest dark:bg-primaryD shadow-[3px_3px_10px_-2px_rgba(0,0,0,0.3)]'>
       <Link to={`detail/${id}`}>
         <img
           src={flag}
@@ -14,18 +14,21 @@ function SingleCard({ name, capital, region, flag, population, id }) {
         />
       </Link>
 
-      <div className='p-8 border-t-2 '>
-        <h1 className={`${styles.typography} text-[18px] font-bold mt-4 mb-2`}>
+      <div className='p-8 border-t-2 dark:border-0 '>
+        <h1
+          className={`${styles.typography} text-[18px] font-bold mt-4 mb-2 dark:text-lightest`}
+        >
           {name}
         </h1>
-        <p className={`${styles.typography} mb-1`}>
-          Population: <span className='ml-2'>{population}</span>
+        <p className={`${styles.typography} mb-1 dark:text-lightest`}>
+          Population:{' '}
+          <span className='ml-2 dark:text-secondaryW'>{population}</span>
         </p>
-        <p className={`${styles.typography} mb-1`}>
-          Region: <span className='ml-2'>{region}</span>
+        <p className={`${styles.typography} mb-1 dark:text-lightest`}>
+          Region: <span className='ml-2 dark:text-secondaryW'>{region}</span>
         </p>
-        <p className={`${styles.typography}`}>
-          Capital: <span className='ml-2'>{capital}</span>
+        <p className={`${styles.typography} dark:text-lightest`}>
+          Capital: <span className='ml-2 dark:text-secondaryW'>{capital}</span>
         </p>
       </div>
     </div>

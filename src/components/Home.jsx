@@ -5,12 +5,11 @@ function Home() {
   const { countries, text, sort } = useGlobalContext()
 
   return (
-    <div className={`lg:max-w-[1180px] max-w-[80%] mx-auto`}>
+    <div className={`lg:max-w-[1180px] xl:max-w-[1660px] max-w-[80%] mx-auto`}>
       <FilterSection />
 
       <div className='flex flex-wrap gap-8 justify-center'>
         {countries.map((country) => {
-          console.log(country)
           if (
             country.region.toUpperCase() === sort.toUpperCase() ||
             sort === 'ByRegion'

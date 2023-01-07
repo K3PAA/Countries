@@ -17,30 +17,34 @@ function Detail() {
   }, [id])
 
   return country ? (
-    <div className='lg:w-[1080px] w-[80%] mx-auto flex gap-12 mt-[60px]'>
+    <div className='w-[80%] mx-auto lg:flex flex-column gap-12 mt-[60px]'>
       <section className='basis-full'>
         <Link
           to='/'
-          className=' bg-lightest cursor-pointer text-darkest flex gap-2 mb-[40px] p-3 w-[160px] shadow-[2px_2px_5px_rgba(0,0,0,0.3)] rounded-sm'
+          className=' xl:text-[32px] bg-lightest cursor-pointer text-darkest flex items-center gap-2 mb-[40px] p-3 w-[180px] shadow-[2px_2px_5px_rgba(0,0,0,0.3)] rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 duration-150 transition-bg dark:bg-primaryD dark:text-lightest'
         >
-          <AiOutlineArrowLeft className='w-[24px] h-[24px]' />
+          <AiOutlineArrowLeft className='w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]' />
           Back to home
         </Link>
         <img
-          src={country.flags.svg}
+          src={country.flags.svg || country[0].flags.svg}
           alt={country.name.common}
-          className='shadow-[3px_3px_9px_rgba(0,0,0,0.3)] min-h-[300px] max-w-[450px] object-cover'
+          className='shadow-[3px_3px_9px_rgba(0,0,0,0.3)] min-h-[200px] min-w-[260px] object-cover'
         />
       </section>
 
       <section className='basis-full flex-col gap-10 mt-20'>
-        <h1 className='font-semibold text-[32px] '>{country.name.common}</h1>
-        <section className='flex py-2 gap-8'>
+        <h1 className='font-semibold text-[32px] dark:text-lightest'>
+          {country.name.common}
+        </h1>
+        <section className='flex lg:flex-row flex-col py-2 gap-8'>
           <div>
-            <p className='paragraph'>
-              Native Name:
-              <span>{Object.values(country.name.nativeName)[0].official}</span>
-            </p>
+            {country.name.nativeName && (
+              <p className='paragraph'>
+                Native Name:
+                <span>Object.values(country.name.nativeName)[0].official</span>
+              </p>
+            )}
             <p className='paragraph'>
               Population: <span>{country.population}</span>
             </p>
@@ -48,10 +52,12 @@ function Detail() {
               Region:
               <span>{country.region}</span>
             </p>
-            <p className='paragraph'>
-              Subregion:
-              <span>{country.subregion}</span>
-            </p>
+            {country.subregion && (
+              <p className='paragraph'>
+                Subregion:
+                <span> country.subregion</span>
+              </p>
+            )}
             {country.capital && (
               <p className='paragraph'>
                 Capital: <span>{country.capital[0]} </span>
@@ -61,18 +67,23 @@ function Detail() {
 
           <div className='flex-col'>
             <p className='paragraph'>
-              Top Level Domain: <span> {country.tld.join(' / ')}</span>
+              Top Level Domain:{' '}
+              <span> {country.tld && country.tld.join(' / ')}</span>
             </p>
-            <p className='paragraph'>
-              Currencies:{' '}
-              <span>{Object.values(country.currencies)[0].name}</span>
-            </p>
+            {country.currencies && (
+              <p className='paragraph'>
+                Currencies:
+                <span>{Object.values(country.currencies)[0].name}</span>
+              </p>
+            )}
             {/* <p>Languages: {country.languages}</p> */}
           </div>
         </section>
 
-        <div className=' flex gap-3 flex-wrap justify-center items-center pt-6'>
-          <p>Border Countries: </p>
+        <div className=' flex gap-3 flex-wrap justify-center items-center pt-6 lg:py-3 py-10'>
+          <p className='xl:text-[32px] lg:text-[16px] text-[26px] dark:text-lightest'>
+            Border Countries:{' '}
+          </p>
           {country.borders &&
             country.borders.map((border, index) => {
               return <CTA key={index} code={border} />

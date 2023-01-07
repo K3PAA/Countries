@@ -21,6 +21,13 @@ const reducer = (state, action) => {
   if (action.type === 'HANDLE_TEXT') {
     return { ...state, text: action.payload }
   }
+
+  if (action.type === 'GET_THEME') {
+    return { ...state, theme: action.payload }
+  }
+  if (action.type === 'CHANGE') {
+    return { ...state, theme: action.payload }
+  }
   return state
 }
 
