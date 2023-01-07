@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function CTA({ code }) {
   const [fullName, setFullName] = useState([])
@@ -10,8 +11,10 @@ function CTA({ code }) {
   }, [])
 
   return fullName[0] ? (
-    <div>
-      <h1 onClick={() => console.log(90)}>{fullName[0].name.common}</h1>
+    <div className='cursor-pointer text-[12px] shadow-[2px_2px_10px_rgba(0,0,0,0.2)]'>
+      <Link to={`/detail/${code}`}>
+        <p className='px-8 py-2'>{fullName[0].name.common}</p>
+      </Link>
     </div>
   ) : (
     <h1>Fetching data</h1>

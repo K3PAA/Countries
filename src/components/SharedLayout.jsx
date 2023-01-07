@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 
 function SharedLayout() {
   return (
-    <main className='bg-secondaryW'>
+    <main>
       <Navigation />
       <Outlet />
     </main>

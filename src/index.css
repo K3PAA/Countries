@@ -2,4 +2,19 @@
 
 @tailwind base;
 @tailwind components;
+
 @tailwind utilities;
+
+body {
+  background-color: 'hsl(0, 0%, 98%)';
+}
+
+@layer components {
+  .paragraph {
+    @apply text-[16px] font-semibold font-nunito mt-2;
+  }
+
+  .paragraph span {
+    @apply font-thin ml-1;
+  }
+}
