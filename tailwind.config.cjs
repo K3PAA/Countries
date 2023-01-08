@@ -5,7 +5,61 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      animation: {},
+      animation: {
+        slideUp: 'slideUp 2s 0.5s both cubic-bezier(.21,.95,.42,1.02)',
+        slideLeft: 'slideLeft 1.2s 1s both cubic-bezier(.3,.79,.38,.84)',
+        slideRight: 'slideRight 1.2s 1s both cubic-bezier(.3,.79,.38,.84)',
+        spinRight: 'spinRight 2s linear infinite',
+        spinLeft: 'spinLeft 2s linear infinite',
+      },
+      keyframes: {
+        spinRight: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(360deg)',
+          },
+        },
+        spinLeft: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(-360deg)',
+          },
+        },
+        slideUp: {
+          '0%': {
+            transform: 'translateY(200px)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: 1,
+          },
+        },
+        slideLeft: {
+          '0%': {
+            transform: 'translateX(-100px)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translateY(100)',
+            opacity: 1,
+          },
+        },
+        slideRight: {
+          '0%': {
+            transform: 'translateX(100px)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: 1,
+          },
+        },
+      },
 
       colors: {
         primaryD: 'hsl(209, 23%, 22%)',

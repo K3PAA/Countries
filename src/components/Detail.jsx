@@ -42,7 +42,9 @@ function Detail() {
             {country.name.nativeName && (
               <p className='paragraph'>
                 Native Name:
-                <span>Object.values(country.name.nativeName)[0].official</span>
+                <span>
+                  {Object.values(country.name.nativeName)[0].official}
+                </span>
               </p>
             )}
             <p className='paragraph'>
@@ -92,7 +94,40 @@ function Detail() {
       </section>
     </div>
   ) : (
-    <h1>Loading ...</h1>
+    <svg
+      width='400'
+      height='400'
+      viewBox='0 0 140 140'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className='absolute top-[30%] left-[50%] -translate-x-[50%] -translate-y-[50%]]'
+    >
+      <g id='loading-frame'>
+        <g id='loading'>
+          <path
+            id='small'
+            d='M80 75.5C80 68.5964 74.4036 63 67.5 63M67.5 88C60.5964 88 55 82.4036 55 75.5'
+            stroke='green'
+            strokeWidth='3'
+            className='origin-center animate-spinRight scale-[1.1]'
+          />
+          <path
+            id='medium'
+            d='M92 75C92 88.8071 80.8071 100 67 100M42 75C42 61.1929 53.1929 50 67 50'
+            stroke='blue'
+            strokeWidth='4'
+            className='origin-center animate-spinLeft scale-[1.45]'
+          />
+          <path
+            id='large'
+            d='M100 75.5C100 57.5507 85.4493 43 67.5 43M67.5 108C49.5507 108 35 93.4493 35 75.5'
+            stroke='green'
+            strokeWidth='5'
+            className='origin-center animate-spinRight scale-[1.70]'
+          />
+        </g>
+      </g>
+    </svg>
   )
 }
 

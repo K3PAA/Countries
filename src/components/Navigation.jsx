@@ -8,7 +8,7 @@ const Navigation = () => {
   const { theme, changeTheme } = useGlobalContext()
 
   return (
-    <div className='shadow-[0_0_10px_-2px_rgba(0,0,0,0.3)] dark:bg-primaryD'>
+    <div className='shadow-[0_0_10px_-2px_rgba(0,0,0,0.3)] dark:bg-primaryD animate-slideUp '>
       <nav className='xl:max-w-[1660px] max-w-[1180px] mx-auto flex justify-between items-center py-8 px-6 xs:px-14  bg-lightest dark:text-lightest dark:bg-primaryD'>
         <h1
           className={`${styles.typography} sm:text-[32px] text-[18px] font-bold flex-1`}

@@ -5,7 +5,7 @@ import styles from '../style'
 
 function SingleCard({ name, capital, region, flag, population, id }) {
   return (
-    <div className='w-[320px] flex-col bg-lightest dark:bg-primaryD shadow-[3px_3px_10px_-2px_rgba(0,0,0,0.3)]'>
+    <div className='w-[320px] flex-col bg-lightest dark:bg-primaryD shadow-[3px_3px_10px_-2px_rgba(0,0,0,0.3)] animate-slideUp'>
       <Link to={`detail/${id}`}>
         <img
           src={flag}
