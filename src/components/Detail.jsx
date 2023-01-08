@@ -20,7 +20,7 @@ function Detail() {
     <div className='w-[80%] mx-auto lg:flex flex-column gap-12 mt-[60px]'>
       <section className='basis-full'>
         <Link
-          to='/'
+          to='/countries/'
           className=' xl:text-[32px] bg-lightest cursor-pointer text-darkest flex items-center gap-2 mb-[40px] p-3 w-[180px] shadow-[2px_2px_5px_rgba(0,0,0,0.3)] rounded-sm hover:bg-slate-200 dark:hover:bg-slate-700 duration-150 transition-bg dark:bg-primaryD dark:text-lightest'
         >
           <AiOutlineArrowLeft className='w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]' />

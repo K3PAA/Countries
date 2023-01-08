@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<SharedLayout />}>
+      <Route path='/countries/' element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path='detail/:id' element={<Detail />} />
         <Route path='*' element={<Error />} />
