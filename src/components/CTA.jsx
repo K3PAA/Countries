@@ -12,7 +12,7 @@ function CTA({ code }) {
 
   return fullName[0] ? (
     <div className='cursor-pointer text-[22px] dark:hover:bg-slate-700 dark:bg-primaryD dark:text-lightest lg:text-[16px] xl:text-[30px] shadow-[2px_2px_10px_rgba(0,0,0,0.2)] hover:bg-slate-200 duration-150 transition-bg'>
-      <Link to={`/detail/${code}`}>
+      <Link to={`/countries/detail/${code}`}>
         <p className='xl:px-10 px-5 py-2'>{fullName[0].name.common}</p>
       </Link>
     </div>
