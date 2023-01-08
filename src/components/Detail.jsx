@@ -57,7 +57,7 @@ function Detail() {
             {country.subregion && (
               <p className='paragraph'>
                 Subregion:
-                <span> country.subregion</span>
+                <span>{country.subregion}</span>
               </p>
             )}
             {country.capital && (
